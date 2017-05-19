@@ -1,6 +1,13 @@
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
-JOB LISTINGS AND JOB FINDER APPLICATION
+## JOB LISTINGS AND JOB FINDER APPLICATION 
+using complete mean stack functionalities -
+Features ::
+1 Login
+2.Job posting
+3.Job Search
+4. Add reviews
+ 
 
 
 
