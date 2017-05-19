@@ -1,0 +1,151 @@
+
+<style>
+.datepickerdemoBasicUsage {
+  /** Demo styles for mdCalendar. */ }
+  .datepickerdemoBasicUsage md-content {
+    padding-bottom: 200px; }
+  .datepickerdemoBasicUsage .validation-messages {
+    font-size: 12px;
+    color: #dd2c00;
+    margin: 10px 0 0 25px; }
+</style>
+<!-- <section data-ng-controller="ZlogController" data-ng-init="find()">
+
+	<div class="page-header">
+		<h1>Productivity</h1>
+	</div>
+    <div >
+ 
+     <md-content  layout-xl="row" layout-padding>
+       <form name="searchForm" method="get" action="/#!/search"> 
+   
+          <md-input-container>
+            <label>Imei</label>
+            <input ng-model="imei" name ="imei">
+          </md-input-container>
+          <md-input-container>
+            <label>Meid</label>
+            <input ng-model="meid"  name ="meid">
+          </md-input-container>
+          <md-input-container>
+            <label>Item Id</label>
+            <input ng-model="itemid" name ="itemid" >
+          </md-input-container>
+            <md-input-container>
+             <label></label>
+              <md-datepicker ng-model="fromDate" name ="fromDate"  md-placeholder="From date"></md-datepicker>
+          </md-input-container>  
+          <md-input-container>
+             <label></label>
+              <md-datepicker name ="toDate" ng-model="toDate"   md-placeholder="To date"></md-datepicker>
+          </md-input-container>    
+           <md-input-container>
+            <md-button class="md-raised md-primary" type="submit" name="submit">Search</md-button>
+           </md-input-container>  
+
+        </form>   
+  </md-content>
+  
+  
+  </div> -->
+    <!-- <form class="searchForm" data-ng-submit="search()" novalidate > -->
+	<form class="searchForm" method="get" action="/#!/search"> 
+
+    <fieldset>
+        <div class="col-xs-6">
+            <div class="form-group">
+                <label for="IMEI" class="col-xs-4 control-label">IMEI</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" ng-model="imei" 	id="imei" name="imei" placeholder="Enter IMEI " />
+                </div>
+            </div>
+             <br> <br>
+            <div class="form-group">
+                <label for="MEID" class="col-xs-4 control-label">MEID</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" ng-model="meid" id="meid" name="meid" placeholder="Enter MEID" />
+                </div>
+            </div>
+             <br> <br>
+            <div class="form-group">
+                <label for="ItemId" class="col-xs-4 control-label">Item ID</label>
+                <div class="col-xs-8">
+                    <input type="text" class="form-control" ng-model="itemid" id="itemid" name="itemid" placeholder="Enter Item ID" />
+                </div>
+            </div>
+           
+        </div>
+        <div class="col-xs-6">
+                <div class="form-group">
+                            <label for="DateFrom" class="col-xs-4 control-label">Date From</label>
+                            <div class="col-xs-8">
+                                 <p class="input-group">
+    								<input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" ng-model="fromDate" id="fromDate" name="fromDate" is-open="data1.isOpen" ng-click="data1.isOpen=true" datepicker-options="myDateOptions" ng-required="false" close-text="Close" />
+     								<span class="input-group-btn">
+            						<button type="button" class="btn btn-default" ng-click="data1.isOpen=true"><i class="glyphicon glyphicon-calendar"></i></button>
+          							</span>
+          						</p>
+                            </div>
+                            
+                </div>
+                 <br> <br>      
+                <div class="form-group">
+                            <label for="DateTill" class="col-xs-4 control-label">Date Till</label>
+                            <div class="col-xs-8">
+                                <p class="input-group">
+    								<input type="text" class="form-control" datepicker-popup="yyyy/MM/dd" ng-model="toDate" id="toDate" name="toDate" is-open="data.isOpen" ng-click="data.isOpen=true" datepicker-options="myDateOptions" ng-required="false" close-text="Close" />
+     							<span class="input-group-btn">
+            						<button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          						</span></p>
+                            </div>
+                            
+                </div>
+                <div>
+
+                </div>
+               
+             
+       
+
+               
+
+               
+            
+           
+        </div>
+
+    </fieldset>
+    <br><br>
+  <div class="pull-right">
+        <input type="submit" name="submit" class="btn btn-primary" value="Search">
+      
+     
+     </div>
+    </form>  
+
+
+
+  
+
+	
+<!-- </section>
+<section data-ng-controller="ZlogController" data-ng-init="search()">
+<div class="list-group">
+		<a data-ng-repeat="zlog in zlogs" data-ng-href="#!/zlogs/{{zlog._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="zlog.created | date:'mediumDate'"></span>
+				by
+				<span data-ng-bind="zlog.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="zlog.title"></h4>
+			<p class="list-group-item-text" data-ng-bind="zlog.content"></p>
+		</a>
+	</div>
+	<br><br>	
+	<div class="alert alert-warning text-center" data-ng-if="zlogs.$resolved && !zlogs.length">
+		  - Doing Great Things -- <a href="/#!/">create one</a>?
+	</div>
+</section> -->
+
+

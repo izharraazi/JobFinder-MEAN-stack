@@ -1,0 +1,48 @@
+<style>
+   table, th , td {
+      border: 1px solid grey;
+      border-collapse: collapse;
+      padding: 5px;
+   }
+   
+   table tr:nth-child(odd) {
+      background-color: #f2f2f2;
+   }
+
+   table tr:nth-child(even) {
+      background-color: #ffffff;
+   }
+</style>
+<section data-ng-controller="ZlogController" data-ng-init="search()">
+    <p> </p>
+
+     <table>
+   <tr>
+      <th>IMEI</th>
+      <th>Site Name</th>
+      <th>MEID</th>
+      <th>Model Id</th>
+      <th>Device-Model No</th>
+      <th>Erase Method</th>
+      <th>Erase Error Code</th>
+      <th>Device Firmware</th>
+      <th>Erase UserId</th>
+   </tr>
+   
+   <tr ng-repeat = "zlog in zlogs">
+      <td> {{ zlog.erase_imei }}</td>
+      <td>{{ zlog.site_name }}</td>
+      <td>{{ zlog.erase_meid}}</td>
+      <td>{{ zlog.model_id}}</td>
+      <td>{{ zlog.device_model_number}}</td>
+      <td>{{ zlog.erase_method}}</td>
+      <td>{{ zlog.erase_error_code}}</td>
+      <td>{{ zlog.device_firmware}}</td>
+      <td>{{ zlog.erase_userid}}</td>
+   </tr>
+</table>
+	
+	<div class="alert alert-warning text-center" data-ng-if="zlogs.$resolved && !zlogs.length">
+		  - Doing Great Things -- <a href="/#!/">create one</a>?
+	</div>
+</section>

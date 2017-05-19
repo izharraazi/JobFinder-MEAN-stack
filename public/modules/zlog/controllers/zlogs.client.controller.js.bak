@@ -1,0 +1,68 @@
+'use strict';
+
+// Zlogs controller
+angular.module('zlogs').controller('ZlogController', ['$scope', '$stateParams', '$location', 'ui.bootstrap.datetimepicker', 'ngAnimate','Authentication', 'Zlogs',
+	function($scope, $stateParams, $location, Authentication, Zlogs) {
+		$scope.authentication = Authentication;
+
+		// Create new Article
+		$scope.create = function() {
+			// Create new Article object
+			var zlog = new Zlogs({
+				title: this.title,
+				content: this.content
+			});
+
+			// Redirect after save
+			zlog.$save(function(response) {
+				$location.path('zlogs/' + response._id);
+
+				// Clear form fields
+				$scope.title = '';
+				$scope.content = '';
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
+
+		// Remove existing Article
+		$scope.remove = function(zlog) {
+			if (zlog) {
+				zlog.$remove();
+
+				for (var i in $scope.zlogs) {
+					if ($scope.zlogs[i] === zlog) {
+						$scope.zlogs.splice(i, 1);
+					}
+				}
+			} else {
+				$scope.zlog.$remove(function() {
+					$location.path('zlogs');
+				});
+			}
+		};
+
+		// Update existing Article
+		$scope.update = function() {
+			var zlog = $scope.zlog;
+
+			zlog.$update(function() {
+				$location.path('zlogs/' + zlog._id);
+			}, function(errorResponse) {
+				$scope.error = errorResponse.data.message;
+			});
+		};
+
+		// Find a list of Zlogs
+		$scope.find = function() {
+			$scope.zlogs = Zlogs.query();
+		};
+
+		// Find existing Article
+		$scope.findOne = function() {
+			$scope.zlog = Zlogs.get({
+				articleId: $stateParams.articleId
+			});
+		};
+	}
+]);
